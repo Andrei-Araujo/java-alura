@@ -1,15 +1,20 @@
 package capitulo06;
 
-public class TestaCondicional2 {
-
+public class TestaEscopo {
 	public static void main(String[] args) {
 		System.out.println("testando condcionais");
 		int idade = 20;
 		int quantidadePessoas = 3;
-		boolean acompanhado = quantidadePessoas>=2;
 		
-		// if (idade >= 18 || quantidadePessoas >= 2) {
-		// if (idade >= 18 && acompanhado == true) {
+		boolean acompanhado;		// escopo global
+		
+		if (quantidadePessoas >=2) {
+			acompanhado = true;		// escopo local
+		} else {
+			acompanhado = false;	// escopo local
+		}
+		
+		
 		if (idade >= 18 && acompanhado) {
 			System.out.println("você tem mais de 18 anos");
 		} else {
